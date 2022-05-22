@@ -30,6 +30,8 @@ const timer = (id, deadline) => {
               minutes = document.querySelector('#minutes'),
               seconds = document.querySelector('#seconds'),
               timeInterval = setInterval (updateClock, 1000);
+        
+        updateClock(); // эту ф-цию вызываем до для устранения бага (при перезагрузке стр часы старые)
 
     function updateClock() {
         const t = getTimeRemaining (endtime);
